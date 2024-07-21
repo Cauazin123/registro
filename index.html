@@ -1,0 +1,288 @@
+<html lang="pt-br"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[DIM] - Pré-registro</title>
+    <link rel="icon" href="https://i.imgur.com/F2UIpKg.gif">
+    <link rel="stylesheet" href="css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+        /* CSS personalizado */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f6fd;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 200px auto 100px; /* Ajuste aqui */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            margin-bottom: 10px;
+        }
+
+        .details_span {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #333333;
+        }
+
+        .alert {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .alert.success {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+
+        .alert.error {
+            background-color: #f44336;
+            color: #ffffff;
+        }
+
+   /* Keyframes */
+   @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+/* Defina a animação keyframe para revelar as letras uma de cada vez */
+@keyframes revelar {
+  from { width: 0; }
+}
+
+/* Aplique a animação de revelar ao elemento p */
+p {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: revelar 3s forwards;
+}
+
+
+    </style>
+<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/../executers/vi-tr.js"></script></head>
+<body onload="getIP()" __processed_bc302958-7238-42ea-a571-c4e7842b1776__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4xNSIsInNjb3JlIjoyMDAxNX1d">
+    <header class="header">
+        <img src="https://i.imgur.com/F2UIpKg.gif" alt="Logo">
+        <h1>[DIM] PRÉ-REGISTRO</h1>
+    </header>
+    <div class="container" bis_skin_checked="1">
+       
+        <form onsubmit="submitForm(); return false;">
+            <div class="details" bis_skin_checked="1">
+                <div class="input-box" bis_skin_checked="1">
+                    <span class="details_span">Nickname</span>
+                    <input name="name" id="name" type="text" placeholder="Seu nickname. Ex: SrWGSS" required="">
+                </div>
+            </div>
+            <div class="details" bis_skin_checked="1">
+                <div class="input-box" bis_skin_checked="1">
+                    <span class="details_span">Email</span>
+                    <input name="email" id="email" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required="">
+                </div>
+            </div>
+            <div class="details" bis_skin_checked="1">
+                <div class="input-box" bis_skin_checked="1">
+                    <span class="details_span">Corpo</span>
+                    <select id="patent">
+                        <option value="" disabled="" selected="">Selecione o corpo que você deseja entrar</option>
+                        <option value="Corpo Militar">Corpo Militar</option>
+                        <option value="Corpo Executivo">Corpo Executivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="details" bis_skin_checked="1">
+                <div class="input-box" bis_skin_checked="1">
+                    <span class="details_span">Nicks antigos</span>
+                    <input name="nickantigo" id="nickantigo" type="text" placeholder="Insira se você já teve outras contas. Separe com / Ex: Jubilei21 / Shaw3n / 3Del3a" required="">
+                </div>
+
+
+                <div class="details" bis_skin_checked="1">
+                    <div class="input-box" bis_skin_checked="1">
+                        <span class="details_span">Se considerando um militar já na equipe, qual seria a sua primeira ideia inicial a apresentar a Corregedoria da Polícia? Seja suficientemente claro em toda a sua ideia</span>
+                        <input name="corregedoria" id="corregedoria" type="text" placeholder="Conte para nós." required="">
+                    </div>
+
+
+<div class="details" bis_skin_checked="1">
+                <div class="input-box" bis_skin_checked="1">
+                    <span class="details_span">O que lhe chamou a atenção na POLÍCIA DIM ® 2024?</span>
+                    <input name="dim2024" id="dim2024" type="text" placeholder="Conte para nós." required="">
+                </div>
+
+                <div class="details" bis_skin_checked="1">
+                    <div class="input-box" bis_skin_checked="1">
+                        <span class="details_span">Qual o seu departamento interno favorito?</span>
+                        <select id="favorito">
+                            <option value="" disabled="" selected="">Selecione o departamento interno</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Relações Públicas">Relações Públicas</option>
+                            <option value="Instrutores">Instrutores</option>
+                            <option value="Rondas">Rondas</option>
+                            <option value="Auditoria Fiscal">Auditoria Fiscal</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Diretoria Executiva">Diretoria Executiva</option>
+                            <option value="Corregedoria">Corregedoria</option>
+                            <option value="Setor de Técnologia">Setor de Técnologia</option>
+                            <option value="Academia Militar">Academia Militar</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+
+
+            <div class="details" bis_skin_checked="1">
+                <div class="input-box" bis_skin_checked="1">
+                    <span class="details_span">Comentários</span>
+                    <input name="comments" id="comments" type="text" placeholder="Conte sua trajetória de carreiras passadas até sua chegada atual" required="">
+                </div>
+            </div>
+            <!-- Campo oculto para armazenar o endereço IP -->
+            <input type="hidden" id="ipAddress" name="ipAddress" value="168.227.231.65">
+            <!-- Botão de enviar dentro do formulário -->
+            <div class="button" bis_skin_checked="1">
+                <button type="submit">Enviar</button>
+            </div>
+        
+        <div id="response" class="alert" style="display:none;" bis_skin_checked="1"></div>
+    </div>
+    <script>
+        function getIP() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    var ipAddress = data.ip;
+                    document.getElementById("ipAddress").value = ipAddress;
+                })
+                .catch(error => {
+                    console.error('Erro ao obter o endereço IP:', error);
+                });
+        }
+
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var ipAddress = document.getElementById("ipAddress").value;
+            var patent = document.getElementById("patent").value;
+            var comments = document.getElementById("comments").value;
+            var nickantigo = document.getElementById("nickantigo").value;
+            var corregedoria = document.getElementById("corregedoria").value;
+            var dim2024 = document.getElementById("dim2024").value;
+            var favorito = document.getElementById("favorito").value;
+
+            var formData = {
+                name: name,
+                email: email,
+                ipAddress: ipAddress,
+                patent: patent,
+                comments: comments,
+                nickantigo: nickantigo,
+                corregedoria: corregedoria,
+                dim2024: dim2024,
+                favorito: favorito
+            };
+
+            fetch('https://api.sheetmonkey.io/form/oj94gufCWWT2a9PSPPb2Cm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById("response").innerHTML = "Formulário enviado com sucesso!";
+                        document.getElementById("response").classList.add("alert", "success");
+                    } else {
+                        document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
+                        document.getElementById("response").classList.add("alert", "error");
+                    }
+                    document.getElementById("response").style.display = "block";
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar o formulário:', error);
+                    document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
+                    document.getElementById("response").classList.add("alert", "error");
+                    document.getElementById("response").style.display = "block";
+                });
+        }
+    </script>
+
+
+</div></div></form></div></body></html>
