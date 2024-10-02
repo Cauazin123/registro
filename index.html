@@ -1,272 +1,65 @@
-<html lang="pt-br"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>[DTR] - Fichamento Policial</title>
-    <link rel="icon" href="https://i.imgur.com/tInJUsb.png">
-    <link rel="stylesheet" href="css.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <title>Formulário de Fichamento Policial</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
-        /* CSS personalizado */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f6fd;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #000000;
-            color: #ffffff;
-            padding: 10px 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
-
-        .container {
-            max-width: 500px;
-            margin: 200px auto 100px; /* Ajuste aqui */
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease;
+        .blinking {
+            animation: blink 1s step-start infinite;
         }
-
-        h2 {
-            margin-bottom: 20px;
-            text-align: center;
+        @keyframes blink {
+            0%, 100% { background-color: black; }
+            50% { background-color: darkgray; }
         }
-
-        .details {
-            margin-bottom: 20px;
-        }
-
-        .input-box {
-            margin-bottom: 10px;
-        }
-
-        .details_span {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        select {
-            width: 100%;
+        input, textarea {
+            width: 80%;
+            margin: 10px auto;
             padding: 10px;
-            border: 1px solid #cccccc;
+            border: 1px solid white;
             border-radius: 5px;
-            box-sizing: border-box;
+            background: black;
+            color: white;
         }
-
-        button[type="submit"] {
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
+        button {
             padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
         }
-
-        button[type="submit"]:hover {
-            background-color: #333333;
+        button:hover {
+            background-color: darkgreen;
         }
-
-        .alert {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-
-        .alert.success {
-            background-color: #4caf50;
-            color: #ffffff;
-        }
-
-        .alert.error {
-            background-color: #f44336;
-            color: #ffffff;
-        }
-
-   /* Keyframes */
-   @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-/* Defina a animação keyframe para revelar as letras uma de cada vez */
-@keyframes revelar {
-  from { width: 0; }
-}
-
-/* Aplique a animação de revelar ao elemento p */
-p {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: revelar 3s forwards;
-}
-
-
     </style>
-<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/../executers/vi-tr.js"></script></head>
-<body onload="getIP()" __processed_bc302958-7238-42ea-a571-c4e7842b1776__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4xNSIsInNjb3JlIjoyMDAxNX1d">
-    <header class="header">
-        <img src="https://i.imgur.com/tInJUsb.png" alt="Logo">
-        <h1>[DTR] FICHAMENTO</h1>
-    </header>
-    <div class="container" bis_skin_checked="1">
-       
-        <form onsubmit="submitForm(); return false;">
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Patente & Nickname</span>
-                    <input name="name" id="name" type="text" placeholder="Seu nickname. Ex: Inspetor -Stornty" required="">
-                </div>
-            </div>
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Email</span>
-                    <input name="email" id="email" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required="">
-                </div>
-                
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Histórico</span>
-                    <input name="historico" id="historico" type="text" placeholder="Informações pertinentes ao seu histórico policial no DTR e em outras instituições." required="">
-                </div>
+</head>
+<body>
+    <h1 class="blinking">Grupamento de Intervenções Táticas Especiais</h1>
+    <p>O Setor de Inteligência, com o propósito de salvaguardar a segurança da instituição, solicita que você preencha o formulário de fichamento policial. Qualquer ato de falsificação, adulteração e/ou omissão de dados ou informações requeridas resultará em consequências severas.</p>
 
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Nicks antigos</span>
-                    <input name="nickantigo" id="nickantigo" type="text" placeholder="Insira se você já teve outras contas. Separe com / Ex: Jubilei21 / Shaw3n / 3Del3a" required="">
-                </div>
-
-                <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Contas utilizadas no ramo militar</span>
-                    <input name="contas" id="contas" type="text" placeholder="Insira se você já teve outras contas. Separe com / Ex: Jubilei21 / Shaw3n / 3Del3a" required="">
-                </div>
-
-                    <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Registro dos locais onde você joga Habbo</span>
-                    <input name="cidade" id="cidade" type="text" placeholder="Indique a cidade e o estado onde você costuma acessar o Habbo da seguinte maneira: Cidade, UF/Cidade, UF" required="">
-                </div>
-
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Provedora de Internet</span>
-                    <input name="provedora" id="provedora" type="text" placeholder="Exemplo: Vivo Fibra, Claro NET, Vtal, Blink Telecom" required="">
-                </div>
-
-                <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Número do Whatsapp</span>
-                    <input name="whatsapp" id="whatsapp" type="text" placeholder="Exemplo: (00) 00000-0000" required="">
-                </div>
-
-                    <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Redes Sociais</span>
-                    <input name="redes" id="redes" type="text" placeholder="Instagram, Facebook..." required="">
-                </div>
-                        
-            </div>
-            <!-- Campo oculto para armazenar o endereço IP -->
-            <input type="hidden" id="ipAddress" name="ipAddress" value="168.227.231.65">
-            <!-- Botão de enviar dentro do formulário -->
-            <div class="button" bis_skin_checked="1">
-                <button type="submit">Enviar</button>
-            </div>
+    <form id="fichamento">
+        <input type="text" placeholder="Nick" name="nick" required>
+        <input type="text" placeholder="Patente/cargo" name="patente" required>
         
-        <div id="response" class="alert" style="display:none;" bis_skin_checked="1"></div>
-    </div>
-    <script>
-        function getIP() {
-            fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    var ipAddress = data.ip;
-                    document.getElementById("ipAddress").value = ipAddress;
-                })
-                .catch(error => {
-                    console.error('Erro ao obter o endereço IP:', error);
-                });
-        }
-
-        function submitForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var ipAddress = document.getElementById("ipAddress").value;
-            var historico = document.getElementById("historico").value;
-            var provedora = document.getElementById("provedora").value;
-            var nickantigo = document.getElementById("nickantigo").value;
-            var contas = document.getElementById("contas").value;
-            var cidade = document.getElementById("cidade").value;
-            var whatsapp = document.getElementById("whatsapp").value;
-            var redes = document.getElementById("redes").value;
-
-            var formData = {
-                name: name,
-                email: email,
-                ipAddres: ipAddress,
-                historico: historico,
-                provedora: provedora,
-                nickantigo: nickantigo,
-                contas: contas,
-                cidade: cidade,
-                whatsapp: whatsapp,
-                redes: redes
-            };
-
-            fetch('https://api.sheetmonkey.io/form/oj94gufCWWT2a9PSPPb2Cm', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then(response => {
-                    if (response.ok) {
-                        document.getElementById("response").innerHTML = "Formulário enviado com sucesso!";
-                        document.getElementById("response").classList.add("alert", "success");
-                    } else {
-                        document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
-                        document.getElementById("response").classList.add("alert", "error");
-                    }
-                    document.getElementById("response").style.display = "block";
-                })
-                .catch(error => {
-                    console.error('Erro ao enviar o formulário:', error);
-                    document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
-                    document.getElementById("response").classList.add("alert", "error");
-                    document.getElementById("response").style.display = "block";
-                });
-        }
-    </script>
-
-
-</div></div></form></div></body></html>
+        <h3>Histórico Policial</h3>
+        <textarea name="historico_DIM" placeholder="Descreva todas as passagens que teve no DIM." required></textarea>
+        <textarea name="contas_militares" placeholder="Descreva todos os nick's das contas utilizadas por você no ramo militar." required></textarea>
+        
+        <h3>Informações pessoais</h3>
+        <textarea name="locais_habbo" placeholder="Cidade, UF onde você costuma acessar o Habbo." required></textarea>
+        <input type="text" placeholder="Provedora de Internet" name="provedora" required>
+        <input type="text" placeholder="Companhia telefônica" name="companhia" required>
+        <input type="text" placeholder="Número do WhatsApp" name="whatsapp" required>
+        <input type="text" placeholder="Redes sociais" name="redes_sociais" required>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
