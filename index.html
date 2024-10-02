@@ -3,62 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Fichamento Policial</title>
+    <title>Fichamento Policial - DIM</title>
     <style>
         body {
-            background-color: black;
+            background: black;
             color: white;
             font-family: Arial, sans-serif;
+            animation: blink 1s infinite;
             text-align: center;
-        }
-        .blinking {
-            animation: blink 1s step-start infinite;
         }
         @keyframes blink {
             0%, 100% { background-color: black; }
             50% { background-color: darkgray; }
         }
-        input, textarea {
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border: 1px solid white;
+        form {
+            background: #222;
+            padding: 20px;
             border-radius: 5px;
-            background: black;
+            box-shadow: 0 0 10px #000;
+            width: 300px;
+            margin: 50px auto;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #444;
             color: white;
         }
         button {
-            padding: 10px 20px;
-            background-color: green;
+            background: green;
             color: white;
             border: none;
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: darkgreen;
+            background: darkgreen;
         }
     </style>
 </head>
 <body>
-    <h1 class="blinking">Grupamento de Intervenções Táticas Especiais</h1>
-    <p>O Setor de Inteligência, com o propósito de salvaguardar a segurança da instituição, solicita que você preencha o formulário de fichamento policial. Qualquer ato de falsificação, adulteração e/ou omissão de dados ou informações requeridas resultará em consequências severas.</p>
+    <h1>Grupamento de Intervenções Táticas Especiais</h1>
+    <p>O Setor de Inteligência solicita que você preencha o formulário de fichamento policial. Qualquer ato de falsificação resultará em consequências severas.</p>
 
     <form id="fichamento">
-        <input type="text" placeholder="Nick" name="nick" required>
-        <input type="text" placeholder="Patente/cargo" name="patente" required>
-        
-        <h3>Histórico Policial</h3>
-        <textarea name="historico_DIM" placeholder="Descreva todas as passagens que teve no DIM." required></textarea>
-        <textarea name="contas_militares" placeholder="Descreva todos os nick's das contas utilizadas por você no ramo militar." required></textarea>
-        
-        <h3>Informações pessoais</h3>
-        <textarea name="locais_habbo" placeholder="Cidade, UF onde você costuma acessar o Habbo." required></textarea>
-        <input type="text" placeholder="Provedora de Internet" name="provedora" required>
-        <input type="text" placeholder="Companhia telefônica" name="companhia" required>
-        <input type="text" placeholder="Número do WhatsApp" name="whatsapp" required>
-        <input type="text" placeholder="Redes sociais" name="redes_sociais" required>
-        
+        <input type="text" name="nick" placeholder="Nick" required>
+        <input type="text" name="patente" placeholder="Patente/cargo" required>
+        <textarea name="historico_DIM" placeholder="Histórico no DIM" required></textarea>
+        <textarea name="contas_militares" placeholder="Contas utilizadas" required></textarea>
+        <textarea name="locais_habbo" placeholder="Registro dos locais onde você joga Habbo" required></textarea>
+        <input type="text" name="provedora" placeholder="Provedora de Internet" required>
+        <input type="text" name="companhia" placeholder="Companhia telefônica" required>
+        <input type="text" name="whatsapp" placeholder="Número do WhatsApp" required>
+        <input type="text" name="redes_sociais" placeholder="Redes sociais" required>
         <button type="submit">Enviar</button>
     </form>
 </body>
