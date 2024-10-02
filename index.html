@@ -1,29 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichamento Policial - DIM</title>
     <style>
         body {
-            background: black;
-            color: white;
+            background: linear-gradient(90deg, rgba(25,0,0) 20%, rgba(10,0,0) 30%, rgba(0,0,0) 80%);
+            background-size: 300% 300%;
+            animation: colors 15s ease infinite;
             font-family: Arial, sans-serif;
-            animation: blink 1s infinite;
-            text-align: center;
+            color: white;
         }
-        @keyframes blink {
-            0%, 100% { background-color: black; }
-            50% { background-color: darkgray; }
+        
+        @keyframes colors {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+
         form {
             background: #222;
             padding: 20px;
+            margin: 50px auto;
             border-radius: 5px;
             box-shadow: 0 0 10px #000;
             width: 300px;
-            margin: 50px auto;
         }
+
         input, textarea {
             width: 100%;
             margin: 10px 0;
@@ -33,6 +36,7 @@
             background: #444;
             color: white;
         }
+
         button {
             background: green;
             color: white;
@@ -40,9 +44,19 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
         }
+
         button:hover {
             background: darkgreen;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
         }
     </style>
 </head>
@@ -54,7 +68,7 @@
         <input type="text" name="nick" placeholder="Nick" required>
         <input type="text" name="patente" placeholder="Patente/cargo" required>
         <textarea name="historico_DIM" placeholder="Histórico no DIM" required></textarea>
-        <textarea name="contas_militares" placeholder="Contas utilizadas" required></textarea>
+        <textarea name="contas_militares" placeholder="Contas utilizadas no ramo militar" required></textarea>
         <textarea name="locais_habbo" placeholder="Registro dos locais onde você joga Habbo" required></textarea>
         <input type="text" name="provedora" placeholder="Provedora de Internet" required>
         <input type="text" name="companhia" placeholder="Companhia telefônica" required>
