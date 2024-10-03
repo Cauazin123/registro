@@ -1,20 +1,21 @@
-<html lang="pt-br"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>[DIM] - Pré-registro</title>
     <link rel="icon" href="https://i.imgur.com/F2UIpKg.gif">
     <link rel="stylesheet" href="css.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
-        /* CSS personalizado */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f6fd;
+            font-family: 'Oswald', sans-serif;
+            background-image: url('https://i.imgur.com/J7nPRjW.jpg'); /* Imagem de fundo */
+            background-size: cover;
+            color: #ffffff; /* Texto claro para contraste */
         }
 
         .header {
@@ -22,25 +23,27 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #000000;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
             color: #ffffff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .container {
             max-width: 500px;
-            margin: 200px auto 100px; /* Ajuste aqui */
+            margin: 150px auto;
             padding: 20px;
-            background-color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             animation: slideIn 1s ease;
         }
 
-        h2 {
-            margin-bottom: 20px;
-            text-align: center;
+        h1, h2 {
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
         }
 
         .details {
@@ -61,9 +64,11 @@
         select {
             width: 100%;
             padding: 10px;
-            border: 1px solid #cccccc;
+            border: 1px solid #333333;
             border-radius: 5px;
             box-sizing: border-box;
+            background-color: #444444; /* Fundo do input */
+            color: #ffffff; /* Texto claro */
         }
 
         button[type="submit"] {
@@ -74,10 +79,11 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
 
         button[type="submit"]:hover {
-            background-color: #333333;
+            background-color: #ff0000; /* Efeito hover vermelho */
         }
 
         .alert {
@@ -96,8 +102,7 @@
             color: #ffffff;
         }
 
-   /* Keyframes */
-   @keyframes slideIn {
+        @keyframes slideIn {
             from {
                 opacity: 0;
                 transform: translateY(-20px);
@@ -107,114 +112,82 @@
                 transform: translateY(0);
             }
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-/* Defina a animação keyframe para revelar as letras uma de cada vez */
-@keyframes revelar {
-  from { width: 0; }
-}
-
-/* Aplique a animação de revelar ao elemento p */
-p {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: revelar 3s forwards;
-}
-
-
     </style>
-<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/../executers/vi-tr.js"></script></head>
-<body onload="getIP()" __processed_777dc78b-06fa-4f56-b1ee-205b6fc2436d__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4xNiIsInNjb3JlIjoyMDAxNn1d">
+</head>
+<body onload="getIP()">
     <header class="header">
-        <img src="https://i.imgur.com/D8NFm7E.png" alt="Logo">
+        <img src="https://i.imgur.com/D8NFm7E.png" alt="Logo" style="max-width: 150px;">
         <h1>[GITE] FICHAMENTO POLICIAL</h1>
     </header>
-    <div class="container" bis_skin_checked="1">
-       
+    <div class="container">
         <form onsubmit="submitForm(); return false;">
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
+            <div class="details">
+                <div class="input-box">
                     <span class="details_span">Nickname:</span>
-                    <input name="name" id="name" type="text" placeholder="Seu nickname. Ex: -Stornty" required="">
+                    <input name="name" id="name" type="text" placeholder="Seu nickname. Ex: -Stornty" required>
                 </div>
             </div>
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
+            <div class="details">
+                <div class="input-box">
                     <span class="details_span">Patente/cargo:</span>
-                    <input name="patente" id="patente" type="text" placeholder="Informe sua patente/cargo." required="">
+                    <input name="patente" id="patente" type="text" placeholder="Informe sua patente/cargo." required>
                 </div>
             </div>
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
+            <div class="details">
+                <div class="input-box">
                     <span class="details_span">Histórico no DIM:</span>
-                    <input name="historico" id="historico" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required="">
+                    <input name="historico" id="historico" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required>
                 </div>
             </div>
-
-            <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
+            <div class="details">
+                <div class="input-box">
                     <span class="details_span">Contas utilizadas no ramo:</span>
-                    <input name="nickantigo" id="nickantigo" type="text" placeholder="Insira se você já teve outras contas. Separe com / Ex: Jubilei21 / Shaw3n / 3Del3a" required="">
-                </div>
-
-
-                <div class="details" bis_skin_checked="1">
-                    <div class="input-box" bis_skin_checked="1">
-                        <span class="details_span">Registro dos locais onde você joga Habbo:</span>
-                        <input name="locais" id="locais" type="text" placeholder="Cidade, UF." required="">
-                    </div>
-
-
-                <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Provedora de Internet:</span>
-                    <input name="provedora" id="provedora" type="text" placeholder=" A provedora que você usa pra se conectar no Habbo: Vivo Fibra, Claro NET, Vtal, Blink Telecom" required="">
-                </div>
-
-
-                <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Companhia telefônica:</span>
-                    <input name="telefonica" id="telefonica" type="text" placeholder="A companhia telefônica a companhia do seu celular: Tim, Vivo, Claro, Nextel, Embratel." required="">
-                </div>
-
-<div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Seu número do Whatsapp:</span>
-                    <input name="whatsapp" id="whatsapp" type="text" placeholder="(00) 0000-0000" required="">
+                    <input name="nickantigo" id="nickantigo" type="text" placeholder="Insira se você já teve outras contas. Separe com / Ex: Jubilei21 / Shaw3n / 3Del3a" required>
                 </div>
             </div>
-            <!-- Campo oculto para armazenar o endereço IP -->
-
-                    <div class="details" bis_skin_checked="1">
-                <div class="input-box" bis_skin_checked="1">
-                    <span class="details_span">Redes sociais:</span>
-                    <input name="redes" id="redes" type="text" placeholder="Facebook, Instagram..." required="">
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Registro dos locais onde você joga Habbo:</span>
+                    <input name="locais" id="locais" type="text" placeholder="Cidade, UF." required>
                 </div>
-
-<input type="hidden" id="ipAddress" name="ipAddress" value="168.227.228.94">
-            <!-- Botão de enviar dentro do formulário -->
-            <div class="button" bis_skin_checked="1">
+            </div>
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Provedora de Internet:</span>
+                    <input name="provedora" id="provedora" type="text" placeholder="Provedora que você usa para se conectar no Habbo." required>
+                </div>
+            </div>
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Companhia telefônica:</span>
+                    <input name="telefonica" id="telefonica" type="text" placeholder="Companhia do seu celular." required>
+                </div>
+            </div>
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Seu número do Whatsapp:</span>
+                    <input name="whatsapp" id="whatsapp" type="text" placeholder="(00) 0000-0000" required>
+                </div>
+            </div>
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Redes sociais:</span>
+                    <input name="redes" id="redes" type="text" placeholder="Facebook, Instagram..." required>
+                </div>
+            </div>
+            <input type="hidden" id="ipAddress" name="ipAddress" value="168.227.228.94">
+            <div class="button">
                 <button type="submit">Enviar</button>
             </div>
-    
-        <div id="response" class="alert" style="display:none;" bis_skin_checked="1"></div>
+            <div id="response" class="alert" style="display:none;"></div>
+        </form>
     </div>
     <script>
         function getIP() {
             fetch('https://api.ipify.org?format=json')
                 .then(response => response.json())
                 .then(data => {
-                    var ipAddress = data.ip;
-                    document.getElementById("ipAddress").value = ipAddress;
+                    document.getElementById("ipAddress").value = data.ip;
                 })
                 .catch(error => {
                     console.error('Erro ao obter o endereço IP:', error);
@@ -222,55 +195,45 @@ p {
         }
 
         function submitForm() {
-    var name = document.getElementById("name").value;
-    var patente = document.getElementById("patente").value;
-    var ipAddress = document.getElementById("ipAddress").value;
-    var historico = document.getElementById("historico").value;
-    var nickantigo = document.getElementById("nickantigo").value;
-    var locais = document.getElementById("locais").value;
-    var provedora = document.getElementById("provedora").value;
-    var telefonica = document.getElementById("telefonica").value;
-    var whatsapp = document.getElementById("whatsapp").value;
-    var redes = document.getElementById("redes").value; // Corrigido para pegar o campo correto
+            var formData = {
+                name: document.getElementById("name").value,
+                patente: document.getElementById("patente").value,
+                ipAddress: document.getElementById("ipAddress").value,
+                historico: document.getElementById("historico").value,
+                nickantigo: document.getElementById("nickantigo").value,
+                locais: document.getElementById("locais").value,
+                provedora: document.getElementById("provedora").value,
+                telefonica: document.getElementById("telefonica").value,
+                whatsapp: document.getElementById("whatsapp").value,
+                redes: document.getElementById("redes").value
+            };
 
-    var formData = {
-        name: name,
-        patente: patente,
-        ipAddress: ipAddress,
-        historico: historico,
-        nickantigo: nickantigo,
-        locais: locais,
-        provedora: provedora,
-        telefonica: telefonica,
-        whatsapp: whatsapp,
-        redes: redes // Incluindo o campo redes
-    };
-
-    fetch('https://api.sheetmonkey.io/form/qLDi5UBZwX7qViE1bihUbx', { // Usando seu link
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-        .then(response => {
-            if (response.ok) {
-                document.getElementById("response").innerHTML = "Formulário enviado com sucesso!";
-                document.getElementById("response").classList.add("alert", "success");
-            } else {
-                document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
-                document.getElementById("response").classList.add("alert", "error");
-            }
-            document.getElementById("response").style.display = "block";
-        })
-        .catch(error => {
-            console.error('Erro ao enviar o formulário:', error);
-            document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
-            document.getElementById("response").classList.add("alert", "error");
-            document.getElementById("response").style.display = "block";
-        });
-}
+            fetch('https://api.sheetmonkey.io/form/qLDi5UBZwX7qViE1bihUbx', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => {
+                var alertDiv = document.getElementById("response");
+                if (response.ok) {
+                    alertDiv.innerHTML = "Formulário enviado com sucesso!";
+                    alertDiv.className = "alert success";
+                } else {
+                    alertDiv.innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
+                    alertDiv.className = "alert error";
+                }
+                alertDiv.style.display = "block";
+            })
+            .catch(error => {
+                console.error('Erro ao enviar o formulário:', error);
+                var alertDiv = document.getElementById("response");
+                alertDiv.innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
+                alertDiv.className = "alert error";
+                alertDiv.style.display = "block";
+            });
+        }
     </script>
-
-
-</div></div></form></div></body></html
+</body>
+</html>
