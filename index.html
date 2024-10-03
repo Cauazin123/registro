@@ -43,12 +43,23 @@
 
         .container {
             max-width: 800px; /* Aumenta a largura do container */
-            margin: 100px auto; /* Distância do topo para não ficar atrás do cabeçalho */
+            margin: 150px auto; /* Distância do topo para não ficar atrás do cabeçalho */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            animation: slideIn 1s ease;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .form-group {
@@ -108,17 +119,6 @@
         .alert.error {
             background-color: #f44336;
             color: #ffffff;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
