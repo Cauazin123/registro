@@ -222,54 +222,54 @@ p {
         }
 
         function submitForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var ipAddress = document.getElementById("ipAddress").value;
-            var patent = document.getElementById("patent").value;
-            var comments = document.getElementById("comments").value;
-            var nickantigo = document.getElementById("nickantigo").value;
-            var corregedoria = document.getElementById("corregedoria").value;
-            var dim2024 = document.getElementById("dim2024").value;
-            var favorito = document.getElementById("favorito").value;
-            var favorito = document.getElementById("redes").value;
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var ipAddress = document.getElementById("ipAddress").value;
+    var patent = document.getElementById("patent").value;
+    var comments = document.getElementById("comments").value;
+    var nickantigo = document.getElementById("nickantigo").value;
+    var corregedoria = document.getElementById("corregedoria").value;
+    var dim2024 = document.getElementById("dim2024").value;
+    var favorito = document.getElementById("favorito").value;
+    var redes = document.getElementById("redes").value; // Corrigido para pegar o campo correto
 
-            var formData = {
-                name: name,
-                email: email,
-                ipAddress: ipAddress,
-                patent: patent,
-                comments: comments,
-                nickantigo: nickantigo,
-                corregedoria: corregedoria,
-                dim2024: dim2024,
-                favorito: favorito,
-                redes: redes
-            };
+    var formData = {
+        name: name,
+        email: email,
+        ipAddress: ipAddress,
+        patent: patent,
+        comments: comments,
+        nickantigo: nickantigo,
+        corregedoria: corregedoria,
+        dim2024: dim2024,
+        favorito: favorito,
+        redes: redes // Incluindo o campo redes
+    };
 
-            fetch('https://api.sheetmonkey.io/form/oj94gufCWWT2a9PSPPb2Cm', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-                .then(response => {
-                    if (response.ok) {
-                        document.getElementById("response").innerHTML = "Formulário enviado com sucesso!";
-                        document.getElementById("response").classList.add("alert", "success");
-                    } else {
-                        document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
-                        document.getElementById("response").classList.add("alert", "error");
-                    }
-                    document.getElementById("response").style.display = "block";
-                })
-                .catch(error => {
-                    console.error('Erro ao enviar o formulário:', error);
-                    document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
-                    document.getElementById("response").classList.add("alert", "error");
-                    document.getElementById("response").style.display = "block";
-                });
-        }
+    fetch('https://api.sheetmonkey.io/form/qLDi5UBZwX7qViE1bihUbx', { // Usando seu link
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById("response").innerHTML = "Formulário enviado com sucesso!";
+                document.getElementById("response").classList.add("alert", "success");
+            } else {
+                document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
+                document.getElementById("response").classList.add("alert", "error");
+            }
+            document.getElementById("response").style.display = "block";
+        })
+        .catch(error => {
+            console.error('Erro ao enviar o formulário:', error);
+            document.getElementById("response").innerHTML = "Erro ao enviar o formulário. Por favor, tente novamente.";
+            document.getElementById("response").classList.add("alert", "error");
+            document.getElementById("response").style.display = "block";
+        });
+}
     </script>
 
 
