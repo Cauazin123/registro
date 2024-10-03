@@ -13,9 +13,9 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-image: url('https://i.imgur.com/J7nPRjW.jpg');
-            background-size: cover;
+            background-color: #121212; /* Fundo escuro */
             color: #ffffff;
+            position: relative;
         }
 
         .header {
@@ -28,6 +28,7 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 10; /* Para ficar acima de tudo */
         }
 
         .header img {
@@ -37,7 +38,7 @@
 
         .container {
             max-width: 500px;
-            margin: 150px auto;
+            margin: 100px auto; /* Distância do topo para não ficar atrás do cabeçalho */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
@@ -46,19 +47,22 @@
             position: relative;
         }
 
-        .container::before {
-            content: "";
+        .side-image {
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
             bottom: 0;
+            width: 50px; /* Ajuste a largura conforme necessário */
             background-image: url('https://i.imgur.com/0jswPyF.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1; /* Aumente ou diminua a opacidade conforme necessário */
-            border-radius: 10px;
-            z-index: -1; /* Coloca a imagem atrás do conteúdo */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .left-side {
+            left: 0;
+        }
+
+        .right-side {
+            right: 0;
         }
 
         h1, h2 {
@@ -140,6 +144,8 @@
         <img src="https://i.imgur.com/D8NFm7E.png" alt="Logo">
         <h1>[GITE] FICHAMENTO POLICIAL</h1>
     </header>
+    <div class="side-image left-side"></div>
+    <div class="side-image right-side"></div>
     <div class="container">
         <form onsubmit="submitForm(); return false;">
             <div class="details">
