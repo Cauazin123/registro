@@ -7,15 +7,15 @@
     <link rel="icon" href="https://i.imgur.com/F2UIpKg.gif">
     <link rel="stylesheet" href="css.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Oswald', sans-serif;
-            background-image: url('https://i.imgur.com/J7nPRjW.jpg'); /* Imagem de fundo */
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://i.imgur.com/J7nPRjW.jpg');
             background-size: cover;
-            color: #ffffff; /* Texto claro para contraste */
+            color: #ffffff;
         }
 
         .header {
@@ -23,21 +23,42 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+            background-color: rgba(0, 0, 0, 0.8);
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
+        .header img {
+            max-width: 150px;
+            margin: 10px 0;
+        }
+
         .container {
             max-width: 500px;
             margin: 150px auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             animation: slideIn 1s ease;
+            position: relative;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://i.imgur.com/0jswPyF.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1; /* Aumente ou diminua a opacidade conforme necessário */
+            border-radius: 10px;
+            z-index: -1; /* Coloca a imagem atrás do conteúdo */
         }
 
         h1, h2 {
@@ -67,8 +88,8 @@
             border: 1px solid #333333;
             border-radius: 5px;
             box-sizing: border-box;
-            background-color: #444444; /* Fundo do input */
-            color: #ffffff; /* Texto claro */
+            background-color: #444444;
+            color: #ffffff;
         }
 
         button[type="submit"] {
@@ -83,7 +104,7 @@
         }
 
         button[type="submit"]:hover {
-            background-color: #ff0000; /* Efeito hover vermelho */
+            background-color: #ff0000;
         }
 
         .alert {
@@ -116,7 +137,7 @@
 </head>
 <body onload="getIP()">
     <header class="header">
-        <img src="https://i.imgur.com/D8NFm7E.png" alt="Logo" style="max-width: 150px;">
+        <img src="https://i.imgur.com/D8NFm7E.png" alt="Logo">
         <h1>[GITE] FICHAMENTO POLICIAL</h1>
     </header>
     <div class="container">
