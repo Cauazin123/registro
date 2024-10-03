@@ -42,7 +42,7 @@
         }
 
         .container {
-            max-width: 500px;
+            max-width: 800px; /* Aumenta a largura do container */
             margin: 100px auto; /* Distância do topo para não ficar atrás do cabeçalho */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
@@ -51,17 +51,15 @@
             animation: slideIn 1s ease;
         }
 
-        h2 {
-            margin: 0;
-            font-size: 20px;
-        }
-
-        .details {
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
             margin-bottom: 20px;
         }
 
         .input-box {
-            margin-bottom: 10px;
+            flex: 1 1 45%; /* Permite que os inputs ocupem até 45% do espaço */
+            margin: 10px;
         }
 
         .details_span {
@@ -82,8 +80,8 @@
         }
 
         button[type="submit"] {
-            background-color: #000000;
-            color: #ffffff;
+            background-color: #00ff00; /* Verde vibrante */
+            color: #000000;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -93,7 +91,7 @@
         }
 
         button[type="submit"]:hover {
-            background-color: #ff0000;
+            background-color: #ff0000; /* Vermelho ao passar o mouse */
         }
 
         .alert {
@@ -131,56 +129,48 @@
     </header>
     <div class="container">
         <form onsubmit="submitForm(); return false;">
-            <div class="details">
+            <div class="form-group">
                 <div class="input-box">
                     <span class="details_span">Nickname:</span>
                     <input name="name" id="name" type="text" placeholder="Seu nickname. Ex: -Stornty" required>
                 </div>
-            </div>
-            <div class="details">
                 <div class="input-box">
                     <span class="details_span">Patente/cargo:</span>
                     <input name="patente" id="patente" type="text" placeholder="Informe sua patente/cargo." required>
                 </div>
             </div>
-            <div class="details">
+            <div class="form-group">
                 <div class="input-box">
                     <span class="details_span">Histórico no DIM:</span>
                     <input name="historico" id="historico" type="text" placeholder="Seu email. Ex: vulgopeluca@gmail.com" required>
                 </div>
-            </div>
-            <div class="details">
                 <div class="input-box">
                     <span class="details_span">Contas utilizadas no ramo:</span>
-                    <input name="nickantigo" id="nickantigo" type="text" placeholder="Insira se você já teve outras contas. Separe com / Ex: Jubilei21 / Shaw3n / 3Del3a" required>
+                    <input name="nickantigo" id="nickantigo" type="text" placeholder="Insira se você já teve outras contas. Separe com /" required>
                 </div>
             </div>
-            <div class="details">
+            <div class="form-group">
                 <div class="input-box">
                     <span class="details_span">Registro dos locais onde você joga Habbo:</span>
                     <input name="locais" id="locais" type="text" placeholder="Cidade, UF." required>
                 </div>
-            </div>
-            <div class="details">
                 <div class="input-box">
                     <span class="details_span">Provedora de Internet:</span>
-                    <input name="provedora" id="provedora" type="text" placeholder="Provedora que você usa para se conectar no Habbo." required>
+                    <input name="provedora" id="provedora" type="text" placeholder="Provedora que você usa." required>
                 </div>
             </div>
-            <div class="details">
+            <div class="form-group">
                 <div class="input-box">
                     <span class="details_span">Companhia telefônica:</span>
                     <input name="telefonica" id="telefonica" type="text" placeholder="Companhia do seu celular." required>
                 </div>
-            </div>
-            <div class="details">
                 <div class="input-box">
                     <span class="details_span">Seu número do Whatsapp:</span>
                     <input name="whatsapp" id="whatsapp" type="text" placeholder="(00) 0000-0000" required>
                 </div>
             </div>
-            <div class="details">
-                <div class="input-box">
+            <div class="form-group">
+                <div class="input-box" style="flex: 1 1 100%;">
                     <span class="details_span">Redes sociais:</span>
                     <input name="redes" id="redes" type="text" placeholder="Facebook, Instagram..." required>
                 </div>
