@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #121212; /* Fundo escuro */
+            background-color: #121212;
             color: #ffffff;
         }
 
@@ -27,7 +27,7 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            z-index: 10; /* Para ficar acima de tudo */
+            z-index: 10;
         }
 
         .header img {
@@ -36,14 +36,14 @@
         }
 
         .header h1 {
-            margin: 10px 0; /* Margem para evitar sobreposição */
+            margin: 10px 0;
             font-size: 24px;
             text-transform: uppercase;
         }
 
         .container {
-            max-width: 800px; /* Aumenta a largura do container */
-            margin: 250px auto; /* Distância do topo para não ficar atrás do cabeçalho */
+            max-width: 800px;
+            margin: 250px auto;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
@@ -69,7 +69,7 @@
         }
 
         .input-box {
-            flex: 1 1 45%; /* Permite que os inputs ocupem até 45% do espaço */
+            flex: 1 1 45%;
             margin: 10px;
         }
 
@@ -91,7 +91,7 @@
         }
 
         button[type="submit"] {
-            background-color: #00ff00; /* Verde vibrante */
+            background-color: #00ff00;
             color: #000000;
             border: none;
             padding: 10px 20px;
@@ -102,7 +102,7 @@
         }
 
         button[type="submit"]:hover {
-            background-color: #ff0000; /* Vermelho ao passar o mouse */
+            background-color: #ff0000;
         }
 
         .alert {
@@ -142,7 +142,7 @@
             <div class="form-group">
                 <div class="input-box">
                     <span class="details_span">Histórico no DIM:</span>
-                    <input name="historico" id="historico" type="text" placeholder="Seu histório. Ex: 2018 - Coronel/2019 - Tenente" required>
+                    <input name="historico" id="historico" type="text" placeholder="Seu histórico. Ex: 2018 - Coronel/2019 - Tenente" required>
                 </div>
                 <div class="input-box">
                     <span class="details_span">Contas utilizadas no ramo:</span>
@@ -169,9 +169,10 @@
                     <input name="whatsapp" id="whatsapp" type="text" placeholder="(00) 0000-0000" required>
                 </div>
             </div>
-            <div class="input-box">
+            <div class="form-group">
+                <div class="input-box" style="flex: 1 1 100%;">
                     <span class="details_span">Seu e-mail:</span>
-                    <input name="email" id="email" type="text" placeholder="(00) 0000-0000" required>
+                    <input name="email" id="email" type="text" placeholder="Seu e-mail." required>
                 </div>
             </div>
             <div class="form-group">
